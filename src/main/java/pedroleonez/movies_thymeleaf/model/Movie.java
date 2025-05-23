@@ -27,5 +27,5 @@ public class Movie {
     private String title;
     
     @NotBlank
-    private int year;
+    private String movieYear;
 }
