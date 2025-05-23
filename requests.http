@@ -1,0 +1,31 @@
+### create method
+
+POST http://localhost:8080/api/movies 
+Content-Type: application/json
+
+{
+    "title": "Inception",
+    "movieYear": "2010"
+}
+
+### get all method
+
+GET http://localhost:8080/api/movies
+
+### get by id method
+
+GET http://localhost:8080/api/movies/1
+
+### update method
+
+PUT http://localhost:8080/api/movies/1 
+Content-Type: application/json
+
+{
+    "title": "La la land",
+    "movieYear": "2016"
+}
+
+### delete method
+
+DELETE http://localhost:8080/api/movies/1
