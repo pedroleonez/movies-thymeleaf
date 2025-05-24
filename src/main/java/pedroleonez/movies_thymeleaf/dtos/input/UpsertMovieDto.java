@@ -7,5 +7,9 @@ public record UpsertMovieDto(
         String title,
 
         @NotBlank
-        String movieYear) {
+        String movieYear,
+        
+        String director,
+        
+        String genre) {
 }

@@ -28,4 +28,8 @@ public class Movie {
     
     @NotBlank
     private String movieYear;
+    
+    private String director;
+    
+    private String genre;
 }
