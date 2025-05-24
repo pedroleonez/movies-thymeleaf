@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <style>
+      .home-hero {
+        padding: 3rem 0;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        border-radius: 1rem;
+        margin-top: 2rem;
+      }
+      .btn-action {
+        transition: all 0.3s;
+      }
+      .btn-action:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+    <title>Sistema de Gerenciamento de Filmes</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="home-hero text-center shadow-sm">
+        <h1 class="display-4">
+          <i class="bi bi-film me-2"></i>Sistema de Gerenciamento de Filmes
+        </h1>
+        <p class="lead">
+          Um sistema simples para gerenciar sua coleção de filmes.
+        </p>
+        <hr class="my-4" />
+
+        <div
+          th:if="${success}"
+          class="alert alert-success alert-dismissible fade show w-75 mx-auto"
+          role="alert"
+        >
+          <i class="bi bi-check-circle-fill me-2"></i>
+          <span th:text="${success}"></span>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button>
+        </div>
+
+        <p class="mb-4">O que você gostaria de fazer hoje?</p>
+        <div class="d-flex justify-content-center gap-3">
+          <button 
+            class="btn btn-primary btn-lg btn-action"
+            onclick="window.location.href='/movies/create'" 
+            onKeyPress="if(event.key==='Enter') window.location.href='/movies/create'"
+          >
+            <i class="bi bi-plus-circle me-2"></i>Cadastrar Novo Filme
+          </button>
+          <button
+            class="btn btn-success btn-lg btn-action" 
+            onclick="window.location.href='/movies'"
+            onKeyPress="if(event.key==='Enter') window.location.href='/movies'"
+          >
+            <i class="bi bi-card-list me-2"></i>Ver Todos os Filmes
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
